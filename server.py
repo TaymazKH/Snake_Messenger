@@ -1,8 +1,9 @@
 def server():
     from socket import socket
     s = socket()
-    address, port = input().split(':')
-    s.bind((address, int(port)))
+    address, port = input("address and port: ").split(':')
+    port = int(port)
+    s.bind((address, port))
     s.listen()
     c, a = s.accept()
     msg = c.recv(1024)

@@ -1,6 +1,6 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
-class Server(BaseHTTPRequestHandler):
+class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         self.send_response(200)
         self.send_header("Content-type", "text/html")
@@ -14,7 +14,7 @@ class Server(BaseHTTPRequestHandler):
 if __name__ == "__main__":
     host, port = input("address and port: ").split(':')
     port = int(port)
-    webServer = HTTPServer((host, port), Server)
+    webServer = HTTPServer((host, port), Handler)
     print("Server started http://%s:%s" % (host, port))
     try:
         webServer.serve_forever()

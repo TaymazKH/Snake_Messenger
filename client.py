@@ -1,8 +1,9 @@
 def client():
     from socket import socket
     s = socket()
-    address, port = input().split(':')
-    s.connect((address, int(port)))
+    address, port = input("address and port: ").split(':')
+    port = int(port)
+    s.connect((address, port))
     s.send(input().encode())
     s.close()
 
