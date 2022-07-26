@@ -2,6 +2,7 @@ from socket import socket
 from threading import Thread
 
 class Client:
+
     def __init__(self, a, p):
         self.continue_flag = True
         c = socket()
